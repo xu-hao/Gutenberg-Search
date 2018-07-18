@@ -3,7 +3,7 @@ const client = new elasticsearch.Client({ host: { host : "localhost", port : 920
 
 async function queryBookData (term) {
   return client.search({ 
-    index : "library", type : "book", 
+    index : "library", type : "_doc", 
     body: {
       query: { 
         match: { text: { query: term } } 
