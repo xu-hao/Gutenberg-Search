@@ -33,7 +33,19 @@ function parseBookFile (filePath) {
 const elasticsearch = require('elasticsearch')
 const client = new elasticsearch.Client({ host: { host : "localhost", port : 9200 } })
 
-// insert your code here
+async function insertBookData (title, author, paragraphs) { 
+  for(let i = 0; i < paragraphs.length; i++)
+    await client.index({
+      index: "library",
+      type: "book",
+      body: {
+        author: author,
+        title: title,
+        location: i,
+        text: paragraphs[i]
+      }
+    })
+}
 
 const filePath = "./books/12-0.txt"
 const { title, author, paragraphs } = parseBookFile(filePath)
