@@ -37,7 +37,7 @@ async function insertBookData (title, author, paragraphs) {
   for(let i = 0; i < paragraphs.length; i++)
     await client.index({
       index: "library",
-      type: "book",
+      type: "_doc",
       body: {
         author: author,
         title: title,
