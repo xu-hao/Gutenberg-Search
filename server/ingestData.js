@@ -30,6 +30,9 @@ function parseBookFile (filePath) {
   return { title, author, paragraphs }
 }
 
+const elasticsearch = require('elasticsearch')
+const client = new elasticsearch.Client({ host: { host : "localhost", port : 9200 } })
+
 // insert your code here
 
 const filePath = "./books/12-0.txt"
