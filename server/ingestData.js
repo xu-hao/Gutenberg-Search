@@ -29,3 +29,9 @@ function parseBookFile (filePath) {
   console.log(`Parsed ${paragraphs.length} Paragraphs\n`)
   return { title, author, paragraphs }
 }
+
+// insert your code here
+
+const filePath = "./books/12-0.txt"
+const { title, author, paragraphs } = parseBookFile(filePath)
+insertBookData(title, author, paragraphs)
