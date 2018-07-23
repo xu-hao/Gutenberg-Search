@@ -15,6 +15,6 @@ async function queryBookData (term) {
 const term = "glass"
 queryBookData(term).then(hits => {
   console.log(hits)
-}
+})
 
 
